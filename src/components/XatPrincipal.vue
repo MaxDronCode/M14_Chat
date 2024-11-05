@@ -4,6 +4,10 @@ import MissatgeComp from '@/components/MissatgeComp.vue'
 const llistaMissatges = reactive([])
 const gestionarRebuda = missatge => {
   llistaMissatges.push(missatge)
+  const lista = document.querySelector('ul')
+  setTimeout(() => {
+    {{ lista.scrollBy(0,10000) }}
+  }, 100);
 }
 </script>
 
@@ -52,4 +56,5 @@ span {
   color: rgb(255, 153, 0);
   font-weight: bold;
 }
+
 </style>

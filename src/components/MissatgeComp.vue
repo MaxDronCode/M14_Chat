@@ -9,12 +9,18 @@ const enviarMissatge = () => {
   }
   missatge.value = ''
 }
+
+const handleClick = (event) => {
+  if (event.keyCode == 13) {
+    enviarMissatge()
+  }
+}
 </script>
 
 <template>
   <div class="container">
     <div class="input">
-      <input v-model="missatge" placeholder="Escriu el teu missatge..." />
+      <input v-model="missatge" placeholder="Escriu el teu missatge..." @keydown="handleClick"/>
     </div>
     <div class="svg-container" @click="enviarMissatge" tabindex="1">
       <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 3L2 11l18.5 8zM10 20.5l3-4.5m2.5-6.5L9 14l.859 6.012c.078.546.216.537.306-.003L11 15z"/></svg>
